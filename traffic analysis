@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 
-# Simulate traffic data
+
 def generate_traffic_data(start_time, end_time, interval_minutes=10):
     data = []
     current_time = start_time
@@ -23,7 +23,7 @@ def generate_traffic_data(start_time, end_time, interval_minutes=10):
 
     return pd.DataFrame(data)
 
-# Analyze traffic data
+
 def analyze_traffic(df):
     print("\n Traffic Data Analysis")
     print("-" * 30)
@@ -46,7 +46,7 @@ def analyze_traffic(df):
         'type_distribution': type_distribution
     }
 
-# Visualize traffic data
+
 def plot_traffic(df):
     hourly_counts = df.groupby(df['timestamp'].dt.hour).size()
     type_counts = df['vehicle_type'].value_counts()
@@ -67,7 +67,6 @@ def plot_traffic(df):
     plt.tight_layout()
     plt.show()
 
-# Main function
 if __name__ == "__main__":
     start = datetime(2025, 4, 16, 6)  # 6 AM
     end = datetime(2025, 4, 16, 22)   # 10 PM
